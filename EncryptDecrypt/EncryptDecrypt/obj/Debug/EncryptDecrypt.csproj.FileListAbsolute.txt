@@ -1,0 +1,12 @@
+C:\Users\jyrili\Source\Repos\EncryptDecrypt\EncryptDecrypt\bin\Debug\EncryptDecrypt.exe.config
+C:\Users\jyrili\Source\Repos\EncryptDecrypt\EncryptDecrypt\bin\Debug\EncryptDecrypt.exe
+C:\Users\jyrili\Source\Repos\EncryptDecrypt\EncryptDecrypt\bin\Debug\EncryptDecrypt.pdb
+C:\Users\jyrili\Source\Repos\EncryptDecrypt\EncryptDecrypt\bin\Debug\eCryptography.dll
+C:\Users\jyrili\Source\Repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\EncryptDecrypt.csprojAssemblyReference.cache
+C:\Users\jyrili\Source\Repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\EncryptDecrypt.Form1.resources
+C:\Users\jyrili\Source\Repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\EncryptDecrypt.Properties.Resources.resources
+C:\Users\jyrili\Source\Repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\EncryptDecrypt.csproj.GenerateResource.cache
+C:\Users\jyrili\Source\Repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\EncryptDecrypt.csproj.CoreCompileInputs.cache
+C:\Users\jyrili\Source\Repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\EncryptDecrypt.csproj.CopyComplete
+C:\Users\jyrili\Source\Repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\EncryptDecrypt.exe
+C:\Users\jyrili\Source\Repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\EncryptDecrypt.pdb
