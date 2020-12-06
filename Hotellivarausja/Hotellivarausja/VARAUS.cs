@@ -74,7 +74,7 @@ namespace Hotellivarausja
             }
 
         }
-        public bool muokkaaVarausta(int hnro, int asid, DateTime sisaan, DateTime ulos)
+        public bool muokkaaVarausta(int hnro, int asid, DateTime sisaan, DateTime ulos, int varaus)
         {
             MySqlCommand komento = new MySqlCommand();
             String paivityskysely = "UPDATE `varaukset` SET `HuoneenNro`= @hno," +
@@ -84,9 +84,11 @@ namespace Hotellivarausja
             komento.Connection = yhteys.otaYhteys();
             //@hno,@aid, @sis, @ulo, @vid
             komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = hnro;
-            komento.Parameters.Add("@aid", MySqlDbType.VarChar).Value = asid;
-            komento.Parameters.Add("@sis", MySqlDbType.VarChar).Value = sisaan;
-            komento.Parameters.Add("@ulo", MySqlDbType.VarChar).Value = ulos;
+            komento.Parameters.Add("@aid", MySqlDbType.Int32).Value = asid;
+            komento.Parameters.Add("@sis", MySqlDbType.Date).Value = sisaan;
+            komento.Parameters.Add("@ulo", MySqlDbType.Date).Value = ulos;
+            komento.Parameters.Add("@ulo", MySqlDbType.Int32).Value = varaus;
+
             //komento.Parameters.Add("@vid", MySqlDbType.VarChar).Value = varausId;
 
             yhteys.avaaYhteys();
@@ -104,14 +106,14 @@ namespace Hotellivarausja
 
         // Luodaan funktio asiakkaan tietojen poistamiseen
         // tähän tarvitaan vain käyttäjätunnus
-        public bool poistaAsiakas(String ktunnus)
+        public bool poistaVaraus(String varausnro)
         {
             MySqlCommand komento = new MySqlCommand();
-            String poistokysely = "DELETE FROM asiakkaat WHERE kayttajanimi = @ktu";
+            String poistokysely = "DELETE FROM varaukset WHERE VarausId = @vno";
             komento.CommandText = poistokysely;
             komento.Connection = yhteys.otaYhteys();
             //@ktu
-            komento.Parameters.Add("@ktu", MySqlDbType.VarChar).Value = ktunnus;
+            komento.Parameters.Add("@vno", MySqlDbType.VarChar).Value = varausnro;
 
             yhteys.avaaYhteys();
             if (komento.ExecuteNonQuery() == 1)

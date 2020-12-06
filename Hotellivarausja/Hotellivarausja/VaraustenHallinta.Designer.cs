@@ -46,6 +46,8 @@
             this.SisaanDTP = new System.Windows.Forms.DateTimePicker();
             this.HuoneNroCB = new System.Windows.Forms.ComboBox();
             this.HuonetyyppiCB = new System.Windows.Forms.ComboBox();
+            this.VarausNroLB = new System.Windows.Forms.Label();
+            this.VarausNroTB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.VarauksetDG)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -66,7 +68,7 @@
             this.UlosLB.AutoSize = true;
             this.UlosLB.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UlosLB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(170)))), ((int)(((byte)(78)))));
-            this.UlosLB.Location = new System.Drawing.Point(142, 258);
+            this.UlosLB.Location = new System.Drawing.Point(142, 298);
             this.UlosLB.Name = "UlosLB";
             this.UlosLB.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.UlosLB.Size = new System.Drawing.Size(65, 27);
@@ -92,6 +94,7 @@
             this.PoistaVarausPainike.TabIndex = 14;
             this.PoistaVarausPainike.Text = "Poista";
             this.PoistaVarausPainike.UseVisualStyleBackColor = true;
+            this.PoistaVarausPainike.Click += new System.EventHandler(this.PoistaVarausPainike_Click);
             // 
             // MuokkaaVaraustaPainike
             // 
@@ -102,6 +105,7 @@
             this.MuokkaaVaraustaPainike.TabIndex = 13;
             this.MuokkaaVaraustaPainike.Text = "Muokkaa";
             this.MuokkaaVaraustaPainike.UseVisualStyleBackColor = true;
+            this.MuokkaaVaraustaPainike.Click += new System.EventHandler(this.MuokkaaVaraustaPainike_Click);
             // 
             // UusiVarausPainike
             // 
@@ -121,13 +125,15 @@
             this.VarauksetDG.Name = "VarauksetDG";
             this.VarauksetDG.Size = new System.Drawing.Size(545, 331);
             this.VarauksetDG.TabIndex = 11;
+            this.VarauksetDG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VarauksetDG_CellClick);
+            this.VarauksetDG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VarauksetDG_CellContentClick);
             // 
             // SisaanLB
             // 
             this.SisaanLB.AutoSize = true;
             this.SisaanLB.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SisaanLB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(170)))), ((int)(((byte)(78)))));
-            this.SisaanLB.Location = new System.Drawing.Point(118, 223);
+            this.SisaanLB.Location = new System.Drawing.Point(118, 263);
             this.SisaanLB.Name = "SisaanLB";
             this.SisaanLB.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.SisaanLB.Size = new System.Drawing.Size(89, 27);
@@ -139,7 +145,7 @@
             this.HuoneenNroLB.AutoSize = true;
             this.HuoneenNroLB.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HuoneenNroLB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(170)))), ((int)(((byte)(78)))));
-            this.HuoneenNroLB.Location = new System.Drawing.Point(55, 188);
+            this.HuoneenNroLB.Location = new System.Drawing.Point(55, 228);
             this.HuoneenNroLB.Name = "HuoneenNroLB";
             this.HuoneenNroLB.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.HuoneenNroLB.Size = new System.Drawing.Size(152, 27);
@@ -151,7 +157,7 @@
             this.HuonetyyppiLB.AutoSize = true;
             this.HuonetyyppiLB.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HuonetyyppiLB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(170)))), ((int)(((byte)(78)))));
-            this.HuonetyyppiLB.Location = new System.Drawing.Point(51, 153);
+            this.HuonetyyppiLB.Location = new System.Drawing.Point(51, 193);
             this.HuonetyyppiLB.Name = "HuonetyyppiLB";
             this.HuonetyyppiLB.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.HuonetyyppiLB.Size = new System.Drawing.Size(156, 27);
@@ -163,7 +169,7 @@
             this.AsiakasNroLB.AutoSize = true;
             this.AsiakasNroLB.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AsiakasNroLB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(170)))), ((int)(((byte)(78)))));
-            this.AsiakasNroLB.Location = new System.Drawing.Point(65, 117);
+            this.AsiakasNroLB.Location = new System.Drawing.Point(65, 157);
             this.AsiakasNroLB.Name = "AsiakasNroLB";
             this.AsiakasNroLB.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.AsiakasNroLB.Size = new System.Drawing.Size(142, 27);
@@ -183,6 +189,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gold;
+            this.panel1.Controls.Add(this.VarausNroTB);
+            this.panel1.Controls.Add(this.VarausNroLB);
             this.panel1.Controls.Add(this.AsiakasCB);
             this.panel1.Controls.Add(this.UlosDTP);
             this.panel1.Controls.Add(this.SisaanDTP);
@@ -209,7 +217,7 @@
             // 
             this.AsiakasCB.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AsiakasCB.FormattingEnabled = true;
-            this.AsiakasCB.Location = new System.Drawing.Point(214, 117);
+            this.AsiakasCB.Location = new System.Drawing.Point(214, 157);
             this.AsiakasCB.Name = "AsiakasCB";
             this.AsiakasCB.Size = new System.Drawing.Size(190, 30);
             this.AsiakasCB.TabIndex = 22;
@@ -220,7 +228,7 @@
             this.UlosDTP.CustomFormat = "dd.MM.yyyy";
             this.UlosDTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UlosDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.UlosDTP.Location = new System.Drawing.Point(213, 262);
+            this.UlosDTP.Location = new System.Drawing.Point(213, 302);
             this.UlosDTP.Name = "UlosDTP";
             this.UlosDTP.Size = new System.Drawing.Size(190, 29);
             this.UlosDTP.TabIndex = 21;
@@ -231,7 +239,7 @@
             this.SisaanDTP.CustomFormat = "dd.MM.yyyy";
             this.SisaanDTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SisaanDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.SisaanDTP.Location = new System.Drawing.Point(214, 224);
+            this.SisaanDTP.Location = new System.Drawing.Point(214, 264);
             this.SisaanDTP.Name = "SisaanDTP";
             this.SisaanDTP.Size = new System.Drawing.Size(190, 29);
             this.SisaanDTP.TabIndex = 20;
@@ -241,7 +249,7 @@
             this.HuoneNroCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.HuoneNroCB.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HuoneNroCB.FormattingEnabled = true;
-            this.HuoneNroCB.Location = new System.Drawing.Point(213, 187);
+            this.HuoneNroCB.Location = new System.Drawing.Point(213, 227);
             this.HuoneNroCB.Name = "HuoneNroCB";
             this.HuoneNroCB.Size = new System.Drawing.Size(190, 30);
             this.HuoneNroCB.TabIndex = 19;
@@ -251,11 +259,31 @@
             this.HuonetyyppiCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.HuonetyyppiCB.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HuonetyyppiCB.FormattingEnabled = true;
-            this.HuonetyyppiCB.Location = new System.Drawing.Point(214, 153);
+            this.HuonetyyppiCB.Location = new System.Drawing.Point(214, 193);
             this.HuonetyyppiCB.Name = "HuonetyyppiCB";
             this.HuonetyyppiCB.Size = new System.Drawing.Size(190, 30);
             this.HuonetyyppiCB.TabIndex = 18;
             this.HuonetyyppiCB.SelectedIndexChanged += new System.EventHandler(this.HuonetyyppiCB_SelectedIndexChanged);
+            // 
+            // VarausNroLB
+            // 
+            this.VarausNroLB.AutoSize = true;
+            this.VarausNroLB.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VarausNroLB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(170)))), ((int)(((byte)(78)))));
+            this.VarausNroLB.Location = new System.Drawing.Point(65, 120);
+            this.VarausNroLB.Name = "VarausNroLB";
+            this.VarausNroLB.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.VarausNroLB.Size = new System.Drawing.Size(131, 27);
+            this.VarausNroLB.TabIndex = 23;
+            this.VarausNroLB.Text = "Varaus nro:";
+            // 
+            // VarausNroTB
+            // 
+            this.VarausNroTB.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VarausNroTB.Location = new System.Drawing.Point(214, 121);
+            this.VarausNroTB.Name = "VarausNroTB";
+            this.VarausNroTB.Size = new System.Drawing.Size(190, 29);
+            this.VarausNroTB.TabIndex = 24;
             // 
             // VaraustenHallinta
             // 
@@ -297,5 +325,7 @@
         private System.Windows.Forms.ComboBox HuoneNroCB;
         private System.Windows.Forms.ComboBox HuonetyyppiCB;
         private System.Windows.Forms.ComboBox AsiakasCB;
+        private System.Windows.Forms.Label VarausNroLB;
+        private System.Windows.Forms.TextBox VarausNroTB;
     }
 }
