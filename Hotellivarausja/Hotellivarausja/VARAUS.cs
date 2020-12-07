@@ -74,7 +74,7 @@ namespace Hotellivarausja
             }
 
         }
-        public bool muokkaaVarausta(int hnro, int asid, DateTime sisaan, DateTime ulos, int varaus)
+        public bool muokkaaVarausta(int hnro, int asid, DateTime sisaan, DateTime ulos, int vara)
         {
             MySqlCommand komento = new MySqlCommand();
             String paivityskysely = "UPDATE `varaukset` SET `HuoneenNro`= @hno," +
@@ -87,7 +87,7 @@ namespace Hotellivarausja
             komento.Parameters.Add("@aid", MySqlDbType.Int32).Value = asid;
             komento.Parameters.Add("@sis", MySqlDbType.Date).Value = sisaan;
             komento.Parameters.Add("@ulo", MySqlDbType.Date).Value = ulos;
-            komento.Parameters.Add("@ulo", MySqlDbType.Int32).Value = varaus;
+            komento.Parameters.Add("@vid", MySqlDbType.Int32).Value = vara;
 
             //komento.Parameters.Add("@vid", MySqlDbType.VarChar).Value = varausId;
 
