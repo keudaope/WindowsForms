@@ -101,11 +101,12 @@ namespace Hotellivarausja
 
         private void VarauksetDG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(VarauksetDG.CurrentRow.Cells[0].Value.ToString(), "Eka Arvo");
+            //MessageBox.Show(VarauksetDG.CurrentRow.Cells[0].Value.ToString(), "Eka Arvo");
             VarausNroTB.Text = VarauksetDG.CurrentRow.Cells[0].Value.ToString();
             AsiakasCB.SelectedValue = VarauksetDG.CurrentRow.Cells[2].Value.ToString();
             HuoneNroCB.SelectedValue = VarauksetDG.CurrentRow.Cells[1].Value.ToString();
-            //SisaanDTP.Value = VarauksetDG.CurrentRow.Cells[2].Value;
+            SisaanDTP.Value = Convert.ToDateTime(VarauksetDG.CurrentRow.Cells[3].Value);
+            UlosDTP.Value = Convert.ToDateTime(VarauksetDG.CurrentRow.Cells[4].Value);
         }
 
         private void PoistaVarausPainike_Click(object sender, EventArgs e)
