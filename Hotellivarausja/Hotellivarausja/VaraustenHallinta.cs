@@ -23,13 +23,21 @@ namespace Hotellivarausja
         private void UusiVarausPainike_Click(object sender, EventArgs e)
         {
             int asiakas = Convert.ToInt32(AsiakasCB.SelectedValue.ToString());
-            int huone = Convert.ToInt32(HuoneNroCB.SelectedValue.ToString());
+            int huonenro = Convert.ToInt32(HuoneNroCB.SelectedValue.ToString());
             DateTime sisaankirjautuminen = Convert.ToDateTime(SisaanDTP.Value);
             DateTime uloskirjautuminen = Convert.ToDateTime(UlosDTP.Value);
             //MessageBox.Show(asiakas.ToString() + " " + huone.ToString() + " " + sisaankirjautuminen.ToString() + " " + uloskirjautuminen.ToString());
-            if (varaus.lisaaVaraus(huone, asiakas, sisaankirjautuminen, uloskirjautuminen))
+            if (varaus.lisaaVaraus(huonenro, asiakas, sisaankirjautuminen, uloskirjautuminen))
             {
                 MessageBox.Show("Varaus lisätty onnistuneesti", "Varauksen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (huone.vaihdaHuoneenVapaus("Kyllä", huonenro))
+                {
+                    MessageBox.Show("Huoneen varaustilanne vaihdettu onnistuneesti");
+                }
+                else
+                {
+                    MessageBox.Show("Huoneen varaustilannetta ei pystytty vaihtamaan");
+                }
             }
             else
             {
@@ -70,7 +78,7 @@ namespace Hotellivarausja
 
         private void MuokkaaVaraustaPainike_Click(object sender, EventArgs e)
         {
-            int huone = Convert.ToInt32(HuoneNroCB.SelectedValue.ToString());
+            int huonenro = Convert.ToInt32(HuoneNroCB.SelectedValue.ToString());
             int asiakas = Convert.ToInt32(AsiakasCB.SelectedValue.ToString());
             DateTime sisaan = Convert.ToDateTime(SisaanDTP.Value);
             DateTime ulos = Convert.ToDateTime(UlosDTP.Value);
@@ -78,13 +86,21 @@ namespace Hotellivarausja
             {
                 int vara = Convert.ToInt32(VarausNroTB.Text);
 
-                if (varaus.muokkaaVarausta(huone, asiakas, sisaan, ulos, vara))
+                if (varaus.muokkaaVarausta(huonenro, asiakas, sisaan, ulos, vara))
                 {
-                    MessageBox.Show("Huone muokattu onnistuneesti", "Huoneen muokkaus", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Varaus muokattu onnistuneesti", "Huoneen muokkaus", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (huone.vaihdaHuoneenVapaus("Ei", huonenro))
+                    {
+                        MessageBox.Show("Huoneen varaustilanne vaihdettu onnistuneesti");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Huoneen varaustilannetta ei pystytty vaihtamaan");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Huonetta ei pystytty muokkaamaan", "Huoneen muokkaus", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Varausta ei pystytty muokkaamaan", "Huoneen muokkaus", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -114,10 +130,13 @@ namespace Hotellivarausja
             try
             {
                 String varausnro = VarausNroTB.Text;
+                int huonenro = HuoneNroCB.SelectedIndex;
+
                 if (varaus.poistaVaraus(varausnro))
                 {
                     VarauksetDG.DataSource = varaus.haeVaraukset();
                     MessageBox.Show("Varaus poistettu onnistuneesti", "Huoneen poisto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    huone.vaihdaHuoneenVapaus("Kyllä", huonenro);
                 }
                 else
                 {

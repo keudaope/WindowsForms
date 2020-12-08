@@ -152,7 +152,7 @@ namespace Hotellivarausja
         public DataTable tyypillisetHuoneet(int htype)
         {
             MySqlCommand komento = new MySqlCommand();
-            String lisayskysely = "SELECT * from huoneet WHERE Huonetyyppi = @hty";
+            String lisayskysely = "SELECT * from huoneet WHERE Huonetyyppi = @hty AND Vapaa='Kyllä'";
             komento.CommandText = lisayskysely;
             komento.Connection = yhteys.otaYhteys();
             //@hty
@@ -163,6 +163,39 @@ namespace Hotellivarausja
             adapteri.SelectCommand = komento;
             adapteri.Fill(taulu);
             return taulu;
+        }
+
+
+    public bool vaihdaHuoneenVapaus(string vapaus, int huone)
+        {
+            if(vapaus == "Kyllä")
+            {
+                vapaus = "Ei";
+            }
+            else
+            {
+                vapaus = "Kyllä";
+            }
+            MySqlCommand komento = new MySqlCommand();
+            String paivityskysely = "UPDATE `huoneet` SET `Vapaa`= @vap WHERE HuoneenNro = @hno";
+            komento.CommandText = paivityskysely;
+            komento.Connection = yhteys.otaYhteys();
+            //@hno,@hty, @puh, @vap
+            komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = huone;
+            komento.Parameters.Add("@vap", MySqlDbType.VarChar).Value = vapaus;
+
+            yhteys.avaaYhteys();
+            if (komento.ExecuteNonQuery() == 1)
+            {
+                yhteys.suljeYhteys();
+                return true;
+            }
+            else
+            {
+                yhteys.suljeYhteys();
+                return false;
+            }
+
         }
     }
 }
