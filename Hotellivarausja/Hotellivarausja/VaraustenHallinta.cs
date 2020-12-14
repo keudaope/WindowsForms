@@ -27,23 +27,35 @@ namespace Hotellivarausja
             DateTime sisaankirjautuminen = Convert.ToDateTime(SisaanDTP.Value);
             DateTime uloskirjautuminen = Convert.ToDateTime(UlosDTP.Value);
             //MessageBox.Show(asiakas.ToString() + " " + huone.ToString() + " " + sisaankirjautuminen.ToString() + " " + uloskirjautuminen.ToString());
-            if (varaus.lisaaVaraus(huonenro, asiakas, sisaankirjautuminen, uloskirjautuminen))
-            {
-                MessageBox.Show("Varaus lisätty onnistuneesti", "Varauksen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (huone.vaihdaHuoneenVapaus("Kyllä", huonenro))
+            
+                if(sisaankirjautuminen < DateTime.Now)
                 {
-                    MessageBox.Show("Huoneen varaustilanne vaihdettu onnistuneesti");
+                    MessageBox.Show("Sisäänkirjautumisen täytyy olla tämä päivä tai sen jälkeen", "Päivämäärän tarkastus", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if(uloskirjautuminen < sisaankirjautuminen)
+                {
+                    MessageBox.Show("Uloskirjautumisen täytyy olla sisäänkirjautumispäivä tai jälkeen", "Päivämäärän tarkastus", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("Huoneen varaustilannetta ei pystytty vaihtamaan");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Varausta ei pystytty lisäämään", "Varauksen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            VarauksetDG.DataSource = varaus.haeVaraukset();
+                    if (varaus.lisaaVaraus(huonenro, asiakas, sisaankirjautuminen, uloskirjautuminen))
+                    {
+                        MessageBox.Show("Varaus lisätty onnistuneesti", "Varauksen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       /* if (huone.vaihdaHuoneenVapaus("Kyllä", huonenro))
+                        {
+                            MessageBox.Show("Huoneen varaustilanne vaihdettu onnistuneesti");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Huoneen varaustilannetta ei pystytty vaihtamaan");
+                        }*/
+                    }
+                    else
+                    {
+                        MessageBox.Show("Varausta ei pystytty lisäämään", "Varauksen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    VarauksetDG.DataSource = varaus.haeVaraukset();
+                }    
         }
 
         private void VaraustenHallinta_Load(object sender, EventArgs e)
@@ -89,14 +101,7 @@ namespace Hotellivarausja
                 if (varaus.muokkaaVarausta(huonenro, asiakas, sisaan, ulos, vara))
                 {
                     MessageBox.Show("Varaus muokattu onnistuneesti", "Huoneen muokkaus", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (huone.vaihdaHuoneenVapaus("Ei", huonenro))
-                    {
-                        MessageBox.Show("Huoneen varaustilanne vaihdettu onnistuneesti");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Huoneen varaustilannetta ei pystytty vaihtamaan");
-                    }
+                    
                 }
                 else
                 {
@@ -118,9 +123,21 @@ namespace Hotellivarausja
         private void VarauksetDG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //MessageBox.Show(VarauksetDG.CurrentRow.Cells[0].Value.ToString(), "Eka Arvo");
+            
             VarausNroTB.Text = VarauksetDG.CurrentRow.Cells[0].Value.ToString();
+            int hnro = Convert.ToInt32(VarauksetDG.CurrentRow.Cells[1].Value.ToString());
+            int htyp = Convert.ToInt32(huone.haeHuoneenTyyppi(hnro));
+            HuoneNroCB.SelectedValue = hnro;
+          /* if (huone.vaihdaHuoneenVapaus("Ei", hnro))
+            {
+                MessageBox.Show("Huoneen varaustilanne vaihdettu onnistuneesti");
+            }
+            else
+            {
+                MessageBox.Show("Huoneen varaustilannetta ei pystytty vaihtamaan");
+            }*/
+            HuonetyyppiCB.SelectedValue = htyp;
             AsiakasCB.SelectedValue = VarauksetDG.CurrentRow.Cells[2].Value.ToString();
-            HuoneNroCB.SelectedValue = VarauksetDG.CurrentRow.Cells[1].Value.ToString();
             SisaanDTP.Value = Convert.ToDateTime(VarauksetDG.CurrentRow.Cells[3].Value);
             UlosDTP.Value = Convert.ToDateTime(VarauksetDG.CurrentRow.Cells[4].Value);
         }
@@ -130,13 +147,20 @@ namespace Hotellivarausja
             try
             {
                 String varausnro = VarausNroTB.Text;
-                int huonenro = HuoneNroCB.SelectedIndex;
-
+                int huonenro = Convert.ToInt32(HuoneNroCB.SelectedValue.ToString());
+                
                 if (varaus.poistaVaraus(varausnro))
                 {
                     VarauksetDG.DataSource = varaus.haeVaraukset();
                     MessageBox.Show("Varaus poistettu onnistuneesti", "Huoneen poisto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    huone.vaihdaHuoneenVapaus("Kyllä", huonenro);
+                   /* if (huone.vaihdaHuoneenVapaus("Ei", huonenro))
+                    {
+                        MessageBox.Show("Huoneen varaustilanne vaihdettu onnistuneesti");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Huoneen varaustilannetta ei pystytty vaihtamaan");
+                    }*/
                 }
                 else
                 {
@@ -148,6 +172,33 @@ namespace Hotellivarausja
             {
                 MessageBox.Show("Virhe: " + ex);
             }
+        }
+
+        private void UlosDTP_ValueChanged(object sender, EventArgs e)
+        {
+            int huonenro = Convert.ToInt32(HuoneNroCB.SelectedValue.ToString());
+                DateTime sisaankirjautuminen = Convert.ToDateTime(SisaanDTP.Value);
+                DateTime uloskirjautuminen = Convert.ToDateTime(UlosDTP.Value);
+                if (varaus.tarkistaPaiva(sisaankirjautuminen, uloskirjautuminen, huonenro))
+                {
+                   // MessageBox.Show("Päivät ovat vapaat", "Päivämäärän tarkastus", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("tämä päivä on varattu tuossa huoneessa", "Päivämäärän tarkastus", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TyhjennaVarausPainike.PerformClick();
+                }
+        }
+
+        private void TyhjennaVarausPainike_Click(object sender, EventArgs e)
+        {
+            VarausNroTB.Text = "";
+            AsiakasCB.SelectedIndex = -1;
+            HuonetyyppiCB.SelectedIndex = 0;
+            HuoneNroCB.SelectedIndex = 0;
+            SisaanDTP.Value = DateTime.Now;
+            UlosDTP.Value = DateTime.Now;
+
         }
     }
 }

@@ -127,5 +127,72 @@ namespace Hotellivarausja
                 return false;
             }
         }
+
+        // Funktion kutsussa annetaan valittu sisääntulo ja uloslähtö aika sekä huoneen numero
+        public bool tarkistaPaiva(DateTime sis, DateTime ulo, int huone)
+        {
+            // Tehdään listat jo varatuille ajoille - yksi sisäänkirjautumista ja toinen uloskirjautumista varten
+            List<DateTime> inside = new List<DateTime>();
+            List < DateTime > outside = new List<DateTime>();
+            
+            // Tehdään muuttuja, joka palautetaan lopussa
+            bool onValissa = true;
+            // Otetaan yhteyttä tietokantaan
+            MySqlCommand komento = new MySqlCommand();
+            // Haetaan tietokannasta ne tiedot, jotka vastaavat annettua huonetta
+            String kysely = "Select * FROM varaukset WHERE HuoneenNro = @hno";
+           /* komento.CommandText = kysely;
+            komento.Connection = yhteys.otaYhteys();
+
+            // Lisätään annettu huone SQL-parametriksi
+            komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = huone;
+
+            yhteys.avaaYhteys();*/
+
+            //Otetaankin yhteys hieman toisella tavalla, jotta voidaan lisätä listamuuttujiin tiedot
+            using (MySqlConnection connection = new MySqlConnection(yhteys.yhteyslause()))
+            using (MySqlCommand command = new MySqlCommand(kysely, connection))
+            {
+                command.Parameters.Add("@hno", MySqlDbType.Int32).Value = huone;
+                connection.Open();
+                // Luodaan muuttuja reader, johon tallennetaan kyselyn tulos
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    // Tarkistataan, onko reader-muuttujassa yhtään riviä. 
+                    if (reader.HasRows)
+                    {
+                        // Käydään läpi reader-muuttujan kaikki rivit
+                        while(reader.Read())
+                        {
+                            // Lisätään listamuuttujiin kaikki ko. huoneen sisääntulo ja uloslähtö ajat
+                            inside.Add(reader.GetDateTime(3));
+                            outside.Add(reader.GetDateTime(4));
+                        }
+                        
+
+                        // Suljetaan yhteys
+                        reader.Close();
+                    }
+                }
+            }
+            // Käydään läpi listamuuttujat ja tarkistetaan, onko annettu sisääntulopäivä ja uloslähtöpäivä jo käytössä
+            for (int i = 0; i < inside.Count; i++)
+            {
+               if(inside[i] <= sis && sis <= outside[i])
+                {
+                    // Lopetetaan tarkastus, jos päivät ovat varatut
+                    i = inside.Count;
+                    // määritetään palautettava boolean arvo
+                    onValissa =  false;
+                }
+               else
+                {
+                    onValissa = true;
+                }
+            }
+            // Palautetaan funktionkutsulle booleanarvo
+            return onValissa;
+        }
+
     }
 }

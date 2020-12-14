@@ -116,5 +116,8 @@ namespace Hotellivarausja
             
         }
 
+        private void HuoneenNroTB_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.TyhjennaHuonePainike = new System.Windows.Forms.Button();
             this.PoistaHuonePainike = new System.Windows.Forms.Button();
@@ -65,52 +66,69 @@
             // 
             // TyhjennaHuonePainike
             // 
+            this.TyhjennaHuonePainike.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.TyhjennaHuonePainike.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TyhjennaHuonePainike.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
             this.TyhjennaHuonePainike.Location = new System.Drawing.Point(273, 309);
             this.TyhjennaHuonePainike.Name = "TyhjennaHuonePainike";
             this.TyhjennaHuonePainike.Size = new System.Drawing.Size(128, 29);
             this.TyhjennaHuonePainike.TabIndex = 15;
             this.TyhjennaHuonePainike.Text = "Tyhjennä kentät";
-            this.TyhjennaHuonePainike.UseVisualStyleBackColor = true;
+            this.TyhjennaHuonePainike.UseVisualStyleBackColor = false;
             this.TyhjennaHuonePainike.Click += new System.EventHandler(this.TyhjennaHuonePainike_Click);
             // 
             // PoistaHuonePainike
             // 
+            this.PoistaHuonePainike.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.PoistaHuonePainike.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PoistaHuonePainike.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
             this.PoistaHuonePainike.Location = new System.Drawing.Point(340, 274);
             this.PoistaHuonePainike.Name = "PoistaHuonePainike";
             this.PoistaHuonePainike.Size = new System.Drawing.Size(62, 29);
             this.PoistaHuonePainike.TabIndex = 14;
             this.PoistaHuonePainike.Text = "Poista";
-            this.PoistaHuonePainike.UseVisualStyleBackColor = true;
+            this.PoistaHuonePainike.UseVisualStyleBackColor = false;
             this.PoistaHuonePainike.Click += new System.EventHandler(this.PoistaHuonePainike_Click);
             // 
             // MuokkaaHuonePainike
             // 
+            this.MuokkaaHuonePainike.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.MuokkaaHuonePainike.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MuokkaaHuonePainike.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
             this.MuokkaaHuonePainike.Location = new System.Drawing.Point(251, 274);
             this.MuokkaaHuonePainike.Name = "MuokkaaHuonePainike";
             this.MuokkaaHuonePainike.Size = new System.Drawing.Size(83, 29);
             this.MuokkaaHuonePainike.TabIndex = 13;
             this.MuokkaaHuonePainike.Text = "Muokkaa";
-            this.MuokkaaHuonePainike.UseVisualStyleBackColor = true;
+            this.MuokkaaHuonePainike.UseVisualStyleBackColor = false;
             this.MuokkaaHuonePainike.Click += new System.EventHandler(this.MuokkaaHuonePainike_Click);
             // 
             // UusiHuonePainike
             // 
+            this.UusiHuonePainike.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.UusiHuonePainike.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UusiHuonePainike.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
             this.UusiHuonePainike.Location = new System.Drawing.Point(92, 274);
             this.UusiHuonePainike.Name = "UusiHuonePainike";
             this.UusiHuonePainike.Size = new System.Drawing.Size(153, 29);
             this.UusiHuonePainike.TabIndex = 12;
             this.UusiHuonePainike.Text = "Lisää uusi huone";
-            this.UusiHuonePainike.UseVisualStyleBackColor = true;
+            this.UusiHuonePainike.UseVisualStyleBackColor = false;
             this.UusiHuonePainike.Click += new System.EventHandler(this.UusiHuonePainike_Click);
             // 
             // HuoneetDG
             // 
             this.HuoneetDG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.HuoneetDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(182)))), ((int)(((byte)(130)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(102)))), ((int)(((byte)(42)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.HuoneetDG.DefaultCellStyle = dataGridViewCellStyle1;
+            this.HuoneetDG.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(102)))), ((int)(((byte)(42)))));
             this.HuoneetDG.Location = new System.Drawing.Point(422, 116);
             this.HuoneetDG.Name = "HuoneetDG";
             this.HuoneetDG.Size = new System.Drawing.Size(530, 222);
@@ -121,7 +139,7 @@
             // 
             this.PostinumeroLB.AutoSize = true;
             this.PostinumeroLB.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PostinumeroLB.ForeColor = System.Drawing.Color.Gold;
+            this.PostinumeroLB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(196)))), ((int)(((byte)(104)))));
             this.PostinumeroLB.Location = new System.Drawing.Point(112, 231);
             this.PostinumeroLB.Name = "PostinumeroLB";
             this.PostinumeroLB.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -131,7 +149,9 @@
             // 
             // PuhelinTB
             // 
+            this.PuhelinTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(182)))), ((int)(((byte)(130)))));
             this.PuhelinTB.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PuhelinTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(102)))), ((int)(((byte)(42)))));
             this.PuhelinTB.Location = new System.Drawing.Point(213, 186);
             this.PuhelinTB.Name = "PuhelinTB";
             this.PuhelinTB.Size = new System.Drawing.Size(190, 29);
@@ -141,7 +161,7 @@
             // 
             this.OsoiteLB.AutoSize = true;
             this.OsoiteLB.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OsoiteLB.ForeColor = System.Drawing.Color.Gold;
+            this.OsoiteLB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(196)))), ((int)(((byte)(104)))));
             this.OsoiteLB.Location = new System.Drawing.Point(100, 186);
             this.OsoiteLB.Name = "OsoiteLB";
             this.OsoiteLB.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -153,7 +173,7 @@
             // 
             this.HuoneTyyppiLB.AutoSize = true;
             this.HuoneTyyppiLB.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HuoneTyyppiLB.ForeColor = System.Drawing.Color.Gold;
+            this.HuoneTyyppiLB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(196)))), ((int)(((byte)(104)))));
             this.HuoneTyyppiLB.Location = new System.Drawing.Point(40, 153);
             this.HuoneTyyppiLB.Name = "HuoneTyyppiLB";
             this.HuoneTyyppiLB.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -163,17 +183,20 @@
             // 
             // HuoneenNroTB
             // 
+            this.HuoneenNroTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(182)))), ((int)(((byte)(130)))));
             this.HuoneenNroTB.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HuoneenNroTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(102)))), ((int)(((byte)(42)))));
             this.HuoneenNroTB.Location = new System.Drawing.Point(213, 116);
             this.HuoneenNroTB.Name = "HuoneenNroTB";
             this.HuoneenNroTB.Size = new System.Drawing.Size(190, 29);
             this.HuoneenNroTB.TabIndex = 2;
+            this.HuoneenNroTB.TextChanged += new System.EventHandler(this.HuoneenNroTB_TextChanged);
             // 
             // EtunimiLB
             // 
             this.EtunimiLB.AutoSize = true;
             this.EtunimiLB.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EtunimiLB.ForeColor = System.Drawing.Color.Gold;
+            this.EtunimiLB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(196)))), ((int)(((byte)(104)))));
             this.EtunimiLB.Location = new System.Drawing.Point(44, 116);
             this.EtunimiLB.Name = "EtunimiLB";
             this.EtunimiLB.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -192,6 +215,7 @@
             // 
             // HuonePaneeli
             // 
+            this.HuonePaneeli.BackColor = System.Drawing.Color.ForestGreen;
             this.HuonePaneeli.Controls.Add(this.panel1);
             this.HuonePaneeli.Controls.Add(this.HuonetyyppiCB);
             this.HuonePaneeli.Controls.Add(this.TyhjennaHuonePainike);
@@ -214,7 +238,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(182)))), ((int)(((byte)(130)))));
             this.panel1.Controls.Add(this.EiRB);
             this.panel1.Controls.Add(this.KyllaRB);
             this.panel1.Location = new System.Drawing.Point(213, 222);
@@ -250,14 +274,15 @@
             // 
             // HuonetyyppiCB
             // 
+            this.HuonetyyppiCB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(182)))), ((int)(((byte)(130)))));
             this.HuonetyyppiCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.HuonetyyppiCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HuonetyyppiCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(102)))), ((int)(((byte)(42)))));
             this.HuonetyyppiCB.FormattingEnabled = true;
             this.HuonetyyppiCB.Location = new System.Drawing.Point(212, 150);
             this.HuonetyyppiCB.Name = "HuonetyyppiCB";
             this.HuonetyyppiCB.Size = new System.Drawing.Size(190, 32);
             this.HuonetyyppiCB.TabIndex = 20;
-           //this.HuonetyyppiCB.SelectedIndexChanged += new System.EventHandler(this.HuonetyyppiCB_SelectedIndexChanged);
             // 
             // HuoneidenHallinta
             // 

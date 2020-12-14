@@ -55,7 +55,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gold;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(147)))), ((int)(((byte)(147)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 199);
             this.panel1.Name = "panel1";
@@ -65,7 +65,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(147)))), ((int)(((byte)(147)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
             this.label1.Location = new System.Drawing.Point(47, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(318, 51);
@@ -88,10 +90,10 @@
             // 
             // KirjauduPainike
             // 
-            this.KirjauduPainike.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(70)))), ((int)(((byte)(67)))));
+            this.KirjauduPainike.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.KirjauduPainike.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.KirjauduPainike.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KirjauduPainike.ForeColor = System.Drawing.Color.White;
+            this.KirjauduPainike.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
             this.KirjauduPainike.Location = new System.Drawing.Point(11, 116);
             this.KirjauduPainike.Name = "KirjauduPainike";
             this.KirjauduPainike.Size = new System.Drawing.Size(400, 42);
@@ -102,7 +104,9 @@
             // 
             // SalasanaTB
             // 
+            this.SalasanaTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(182)))), ((int)(((byte)(130)))));
             this.SalasanaTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SalasanaTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(102)))), ((int)(((byte)(42)))));
             this.SalasanaTB.Location = new System.Drawing.Point(111, 72);
             this.SalasanaTB.Name = "SalasanaTB";
             this.SalasanaTB.Size = new System.Drawing.Size(300, 31);
@@ -115,7 +119,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(196)))), ((int)(((byte)(104)))));
             this.label3.Location = new System.Drawing.Point(6, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 25);
@@ -125,7 +129,9 @@
             // 
             // KayttajaTB
             // 
+            this.KayttajaTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(182)))), ((int)(((byte)(130)))));
             this.KayttajaTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KayttajaTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(102)))), ((int)(((byte)(42)))));
             this.KayttajaTB.Location = new System.Drawing.Point(111, 24);
             this.KayttajaTB.Name = "KayttajaTB";
             this.KayttajaTB.Size = new System.Drawing.Size(300, 31);
@@ -136,7 +142,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(196)))), ((int)(((byte)(104)))));
             this.label2.Location = new System.Drawing.Point(6, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 25);
@@ -147,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(170)))), ((int)(((byte)(28)))));
+            this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(444, 450);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);

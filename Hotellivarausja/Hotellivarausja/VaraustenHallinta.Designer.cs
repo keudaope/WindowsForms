@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.UlosLB = new System.Windows.Forms.Label();
             this.TyhjennaVarausPainike = new System.Windows.Forms.Button();
@@ -41,13 +42,13 @@
             this.AsiakasNroLB = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.VarausNroTB = new System.Windows.Forms.TextBox();
+            this.VarausNroLB = new System.Windows.Forms.Label();
             this.AsiakasCB = new System.Windows.Forms.ComboBox();
             this.UlosDTP = new System.Windows.Forms.DateTimePicker();
             this.SisaanDTP = new System.Windows.Forms.DateTimePicker();
             this.HuoneNroCB = new System.Windows.Forms.ComboBox();
             this.HuonetyyppiCB = new System.Windows.Forms.ComboBox();
-            this.VarausNroLB = new System.Windows.Forms.Label();
-            this.VarausNroTB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.VarauksetDG)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -55,7 +56,9 @@
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(147)))), ((int)(((byte)(147)))));
             this.label1.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
             this.label1.Location = new System.Drawing.Point(7, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(967, 78);
@@ -77,50 +80,68 @@
             // 
             // TyhjennaVarausPainike
             // 
+            this.TyhjennaVarausPainike.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.TyhjennaVarausPainike.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TyhjennaVarausPainike.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
             this.TyhjennaVarausPainike.Location = new System.Drawing.Point(275, 374);
             this.TyhjennaVarausPainike.Name = "TyhjennaVarausPainike";
             this.TyhjennaVarausPainike.Size = new System.Drawing.Size(128, 29);
             this.TyhjennaVarausPainike.TabIndex = 15;
             this.TyhjennaVarausPainike.Text = "Tyhjennä kentät";
-            this.TyhjennaVarausPainike.UseVisualStyleBackColor = true;
+            this.TyhjennaVarausPainike.UseVisualStyleBackColor = false;
+            this.TyhjennaVarausPainike.Click += new System.EventHandler(this.TyhjennaVarausPainike_Click);
             // 
             // PoistaVarausPainike
             // 
+            this.PoistaVarausPainike.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.PoistaVarausPainike.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PoistaVarausPainike.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
             this.PoistaVarausPainike.Location = new System.Drawing.Point(342, 339);
             this.PoistaVarausPainike.Name = "PoistaVarausPainike";
             this.PoistaVarausPainike.Size = new System.Drawing.Size(62, 29);
             this.PoistaVarausPainike.TabIndex = 14;
             this.PoistaVarausPainike.Text = "Poista";
-            this.PoistaVarausPainike.UseVisualStyleBackColor = true;
+            this.PoistaVarausPainike.UseVisualStyleBackColor = false;
             this.PoistaVarausPainike.Click += new System.EventHandler(this.PoistaVarausPainike_Click);
             // 
             // MuokkaaVaraustaPainike
             // 
+            this.MuokkaaVaraustaPainike.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.MuokkaaVaraustaPainike.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MuokkaaVaraustaPainike.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
             this.MuokkaaVaraustaPainike.Location = new System.Drawing.Point(253, 339);
             this.MuokkaaVaraustaPainike.Name = "MuokkaaVaraustaPainike";
             this.MuokkaaVaraustaPainike.Size = new System.Drawing.Size(83, 29);
             this.MuokkaaVaraustaPainike.TabIndex = 13;
             this.MuokkaaVaraustaPainike.Text = "Muokkaa";
-            this.MuokkaaVaraustaPainike.UseVisualStyleBackColor = true;
+            this.MuokkaaVaraustaPainike.UseVisualStyleBackColor = false;
             this.MuokkaaVaraustaPainike.Click += new System.EventHandler(this.MuokkaaVaraustaPainike_Click);
             // 
             // UusiVarausPainike
             // 
+            this.UusiVarausPainike.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.UusiVarausPainike.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UusiVarausPainike.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
             this.UusiVarausPainike.Location = new System.Drawing.Point(94, 339);
             this.UusiVarausPainike.Name = "UusiVarausPainike";
             this.UusiVarausPainike.Size = new System.Drawing.Size(153, 29);
             this.UusiVarausPainike.TabIndex = 12;
             this.UusiVarausPainike.Text = "Lisää uusi varaus";
-            this.UusiVarausPainike.UseVisualStyleBackColor = true;
+            this.UusiVarausPainike.UseVisualStyleBackColor = false;
             this.UusiVarausPainike.Click += new System.EventHandler(this.UusiVarausPainike_Click);
             // 
             // VarauksetDG
             // 
             this.VarauksetDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(182)))), ((int)(((byte)(130)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(102)))), ((int)(((byte)(42)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.VarauksetDG.DefaultCellStyle = dataGridViewCellStyle2;
+            this.VarauksetDG.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(102)))), ((int)(((byte)(42)))));
             this.VarauksetDG.Location = new System.Drawing.Point(422, 116);
             this.VarauksetDG.Name = "VarauksetDG";
             this.VarauksetDG.Size = new System.Drawing.Size(545, 331);
@@ -178,7 +199,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(70)))), ((int)(((byte)(67)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(147)))), ((int)(((byte)(147)))));
             this.panel2.Controls.Add(this.label1);
             this.panel2.ForeColor = System.Drawing.Color.Gold;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -188,7 +209,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gold;
+            this.panel1.BackColor = System.Drawing.Color.ForestGreen;
             this.panel1.Controls.Add(this.VarausNroTB);
             this.panel1.Controls.Add(this.VarausNroLB);
             this.panel1.Controls.Add(this.AsiakasCB);
@@ -213,57 +234,16 @@
             this.panel1.Size = new System.Drawing.Size(971, 454);
             this.panel1.TabIndex = 1;
             // 
-            // AsiakasCB
+            // VarausNroTB
             // 
-            this.AsiakasCB.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsiakasCB.FormattingEnabled = true;
-            this.AsiakasCB.Location = new System.Drawing.Point(214, 157);
-            this.AsiakasCB.Name = "AsiakasCB";
-            this.AsiakasCB.Size = new System.Drawing.Size(190, 30);
-            this.AsiakasCB.TabIndex = 22;
-            // 
-            // UlosDTP
-            // 
-            this.UlosDTP.CalendarFont = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UlosDTP.CustomFormat = "dd.MM.yyyy";
-            this.UlosDTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UlosDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.UlosDTP.Location = new System.Drawing.Point(213, 302);
-            this.UlosDTP.Name = "UlosDTP";
-            this.UlosDTP.Size = new System.Drawing.Size(190, 29);
-            this.UlosDTP.TabIndex = 21;
-            // 
-            // SisaanDTP
-            // 
-            this.SisaanDTP.CalendarFont = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SisaanDTP.CustomFormat = "dd.MM.yyyy";
-            this.SisaanDTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SisaanDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.SisaanDTP.Location = new System.Drawing.Point(214, 264);
-            this.SisaanDTP.Name = "SisaanDTP";
-            this.SisaanDTP.Size = new System.Drawing.Size(190, 29);
-            this.SisaanDTP.TabIndex = 20;
-            // 
-            // HuoneNroCB
-            // 
-            this.HuoneNroCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.HuoneNroCB.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HuoneNroCB.FormattingEnabled = true;
-            this.HuoneNroCB.Location = new System.Drawing.Point(213, 227);
-            this.HuoneNroCB.Name = "HuoneNroCB";
-            this.HuoneNroCB.Size = new System.Drawing.Size(190, 30);
-            this.HuoneNroCB.TabIndex = 19;
-            // 
-            // HuonetyyppiCB
-            // 
-            this.HuonetyyppiCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.HuonetyyppiCB.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HuonetyyppiCB.FormattingEnabled = true;
-            this.HuonetyyppiCB.Location = new System.Drawing.Point(214, 193);
-            this.HuonetyyppiCB.Name = "HuonetyyppiCB";
-            this.HuonetyyppiCB.Size = new System.Drawing.Size(190, 30);
-            this.HuonetyyppiCB.TabIndex = 18;
-            this.HuonetyyppiCB.SelectedIndexChanged += new System.EventHandler(this.HuonetyyppiCB_SelectedIndexChanged);
+            this.VarausNroTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(182)))), ((int)(((byte)(130)))));
+            this.VarausNroTB.Enabled = false;
+            this.VarausNroTB.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VarausNroTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(102)))), ((int)(((byte)(42)))));
+            this.VarausNroTB.Location = new System.Drawing.Point(214, 121);
+            this.VarausNroTB.Name = "VarausNroTB";
+            this.VarausNroTB.Size = new System.Drawing.Size(190, 29);
+            this.VarausNroTB.TabIndex = 24;
             // 
             // VarausNroLB
             // 
@@ -277,13 +257,69 @@
             this.VarausNroLB.TabIndex = 23;
             this.VarausNroLB.Text = "Varaus nro:";
             // 
-            // VarausNroTB
+            // AsiakasCB
             // 
-            this.VarausNroTB.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VarausNroTB.Location = new System.Drawing.Point(214, 121);
-            this.VarausNroTB.Name = "VarausNroTB";
-            this.VarausNroTB.Size = new System.Drawing.Size(190, 29);
-            this.VarausNroTB.TabIndex = 24;
+            this.AsiakasCB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(182)))), ((int)(((byte)(130)))));
+            this.AsiakasCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AsiakasCB.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AsiakasCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(102)))), ((int)(((byte)(42)))));
+            this.AsiakasCB.FormattingEnabled = true;
+            this.AsiakasCB.Location = new System.Drawing.Point(214, 157);
+            this.AsiakasCB.Name = "AsiakasCB";
+            this.AsiakasCB.Size = new System.Drawing.Size(190, 30);
+            this.AsiakasCB.TabIndex = 22;
+            // 
+            // UlosDTP
+            // 
+            this.UlosDTP.CalendarFont = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UlosDTP.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(102)))), ((int)(((byte)(42)))));
+            this.UlosDTP.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(182)))), ((int)(((byte)(130)))));
+            this.UlosDTP.CustomFormat = "dd.MM.yyyy";
+            this.UlosDTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UlosDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.UlosDTP.Location = new System.Drawing.Point(213, 302);
+            this.UlosDTP.Name = "UlosDTP";
+            this.UlosDTP.Size = new System.Drawing.Size(190, 29);
+            this.UlosDTP.TabIndex = 21;
+            this.UlosDTP.ValueChanged += new System.EventHandler(this.UlosDTP_ValueChanged);
+            // 
+            // SisaanDTP
+            // 
+            this.SisaanDTP.CalendarFont = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SisaanDTP.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(102)))), ((int)(((byte)(42)))));
+            this.SisaanDTP.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(182)))), ((int)(((byte)(130)))));
+            this.SisaanDTP.CustomFormat = "dd.MM.yyyy";
+            this.SisaanDTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SisaanDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.SisaanDTP.Location = new System.Drawing.Point(214, 264);
+            this.SisaanDTP.Name = "SisaanDTP";
+            this.SisaanDTP.Size = new System.Drawing.Size(190, 29);
+            this.SisaanDTP.TabIndex = 20;
+            // 
+            // HuoneNroCB
+            // 
+            this.HuoneNroCB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(182)))), ((int)(((byte)(130)))));
+            this.HuoneNroCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.HuoneNroCB.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HuoneNroCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(102)))), ((int)(((byte)(42)))));
+            this.HuoneNroCB.FormattingEnabled = true;
+            this.HuoneNroCB.Location = new System.Drawing.Point(213, 227);
+            this.HuoneNroCB.Name = "HuoneNroCB";
+            this.HuoneNroCB.Size = new System.Drawing.Size(190, 30);
+            this.HuoneNroCB.TabIndex = 19;
+            // 
+            // HuonetyyppiCB
+            // 
+            this.HuonetyyppiCB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(182)))), ((int)(((byte)(130)))));
+            this.HuonetyyppiCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.HuonetyyppiCB.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HuonetyyppiCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(102)))), ((int)(((byte)(42)))));
+            this.HuonetyyppiCB.FormattingEnabled = true;
+            this.HuonetyyppiCB.Location = new System.Drawing.Point(214, 193);
+            this.HuonetyyppiCB.Name = "HuonetyyppiCB";
+            this.HuonetyyppiCB.Size = new System.Drawing.Size(190, 30);
+            this.HuonetyyppiCB.TabIndex = 18;
+            this.HuonetyyppiCB.SelectedIndexChanged += new System.EventHandler(this.HuonetyyppiCB_SelectedIndexChanged);
             // 
             // VaraustenHallinta
             // 

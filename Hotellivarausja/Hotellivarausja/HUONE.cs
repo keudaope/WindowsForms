@@ -166,13 +166,13 @@ namespace Hotellivarausja
         }
 
 
-    public bool vaihdaHuoneenVapaus(string vapaus, int huone)
+    public bool vaihdaHuoneenVapaus(string vapaus, int huonenro)
         {
             if(vapaus == "Kyllä")
             {
                 vapaus = "Ei";
             }
-            else
+            else if(vapaus == "Ei")
             {
                 vapaus = "Kyllä";
             }
@@ -181,7 +181,7 @@ namespace Hotellivarausja
             komento.CommandText = paivityskysely;
             komento.Connection = yhteys.otaYhteys();
             //@hno,@hty, @puh, @vap
-            komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = huone;
+            komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = huonenro;
             komento.Parameters.Add("@vap", MySqlDbType.VarChar).Value = vapaus;
 
             yhteys.avaaYhteys();
@@ -195,7 +195,22 @@ namespace Hotellivarausja
                 yhteys.suljeYhteys();
                 return false;
             }
+        }
 
+        public int haeHuoneenTyyppi(int numero)
+        {
+            MySqlCommand komento = new MySqlCommand();
+            String lisayskysely = "SELECT * from huoneet WHERE HuoneenNro = @nro";
+            komento.CommandText = lisayskysely;
+            komento.Connection = yhteys.otaYhteys();
+            //@hty
+            komento.Parameters.Add("@nro", MySqlDbType.Int32).Value = numero;
+            MySqlDataAdapter adapteri = new MySqlDataAdapter();
+            DataTable taulu = new DataTable();
+
+            adapteri.SelectCommand = komento;
+            adapteri.Fill(taulu);
+            return Convert.ToInt32(taulu.Rows[0][1].ToString());
         }
     }
 }

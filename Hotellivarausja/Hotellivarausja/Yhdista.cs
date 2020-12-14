@@ -15,6 +15,10 @@ namespace Hotellivarausja
      */
     class Yhdista
     {
+        public string yhteyslause()
+        {
+            return "datasource=localhost; port=3306;username=root;password=;database=hotelli";
+        }
         private MySqlConnection yhteys = new MySqlConnection("datasource=localhost; port=3306;username=root;password=;database=hotelli");
         // Luodaan funktio yhteyttä varten
         public MySqlConnection otaYhteys()
