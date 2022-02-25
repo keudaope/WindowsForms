@@ -21,14 +21,34 @@ namespace graafinen
         }
         private void Sijoitukset_Load(object sender, EventArgs e)
         {
-            PiirraTaulukko(tulostaulu, 950, 1250, 1);
-            PiirraTaulukko(TulostauluNordicMCB, 5900, 6200, 2);
-            PiirraTaulukko(TulostauluNordicSCB, 2175, 2475, 3);
-            PiirraTaulukko(TulostauluRoburAA, 1250, 1550, 4);
-            PiirraTaulukko(TulostauluRoburJA, 4400, 4700, 5);
-            PiirraTaulukko(TulostauluRoburRA, 4900, 5200, 6);
-            PiirraTaulukko(TulostauluRoburTA, 5520, 5820, 7);
-            PiirraTaulukko(TulostauluAlibaba, 1650, 1950, 8);
+            int alku, loppu;
+            alku = haePienin(1)-25;
+            loppu = haeSuurin(1)+25;
+            PiirraTaulukko(tulostaulu, alku, loppu, 1);
+            alku = haePienin(2)-25;
+            loppu = haeSuurin(2)+25;
+            PiirraTaulukko(TulostauluNordicMCB, alku, loppu, 2);
+            alku = haePienin(3) - 25;
+            loppu = haeSuurin(3) + 25;
+            PiirraTaulukko(TulostauluNordicSCB, alku, loppu, 3);
+            alku = haePienin(6) - 25;
+            loppu = haeSuurin(6) + 25;
+            PiirraTaulukko(TulostauluRoburRA, alku, loppu, 6);
+            alku = haePienin(7) - 25;
+            loppu = haeSuurin(7) + 25;
+            PiirraTaulukko(TulostauluRoburTA, alku, loppu, 7);
+            alku = haePienin(8) - 25;
+            loppu = haeSuurin(8) + 25;
+            PiirraTaulukko(LiteCoinChart, alku, loppu, 8);
+            alku = haePienin(9) - 25;
+            loppu = haeSuurin(9) + 25;
+            PiirraTaulukko(EthereumChart, alku, loppu, 9);
+            alku = haePienin(10) - 25;
+            loppu = haeSuurin(10) + 25;
+            PiirraTaulukko(RippleChart, alku, loppu, 10);
+            alku = haePienin(11) - 25;
+            loppu = haeSuurin(11) + 25;
+            PiirraTaulukko(StellarLumensChart, alku, loppu, 11);
         }
         public void PiirraTaulukko(Chart taulu, int min, int max, int rahasto)
         {
@@ -52,6 +72,65 @@ namespace graafinen
                 MessageBox.Show("Virhe " + ex);
             }
             yhteys.Close();
+        }
+        public int haePienin(int rahasto)
+        {
+            int pienin=0;
+            MySqlConnection yhteys = new MySqlConnection("datasource=localhost; port=3306;username=root;password=;database=sijoitukset");
+            MySqlCommand komento = new MySqlCommand("SELECT Min(MarkkinaArvo) AS Minimi FROM `tilanne` WHERE RahastoId = @rah", yhteys);
+            komento.Parameters.Add("@rah", MySqlDbType.VarChar).Value = rahasto;
+            MySqlDataReader lukija;
+            try
+            {
+                yhteys.Open();
+                lukija = komento.ExecuteReader();
+                while (lukija.Read())
+                {
+                    pienin = Convert.ToInt32(lukija.GetDouble(0));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Virhe " + ex);
+            }
+            yhteys.Close();
+            return pienin;
+        }
+        public int haeSuurin(int rahasto)
+        {
+            int suurin = 0;
+            MySqlConnection yhteys = new MySqlConnection("datasource=localhost; port=3306;username=root;password=;database=sijoitukset");
+            MySqlCommand komento = new MySqlCommand("SELECT Max(MarkkinaArvo) AS Maksimi FROM `tilanne` WHERE RahastoId = @rah", yhteys);
+            komento.Parameters.Add("@rah", MySqlDbType.VarChar).Value = rahasto;
+            MySqlDataReader lukija;
+            try
+            {
+                yhteys.Open();
+                lukija = komento.ExecuteReader();
+                while (lukija.Read())
+                {
+                    suurin = Convert.ToInt32(lukija.GetDouble(0));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Virhe " + ex);
+            }
+            yhteys.Close();
+            return suurin;
+        }
+
+        private void syötäArvojaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 syotto = new Form2();
+            syotto.ShowDialog();
+
+        }
+
+        private void näytäRahastotToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sijoitukset nayta = new Sijoitukset();
+            nayta.ShowDialog();
         }
     }
 }

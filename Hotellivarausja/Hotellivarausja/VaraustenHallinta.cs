@@ -177,8 +177,8 @@ namespace Hotellivarausja
         private void UlosDTP_ValueChanged(object sender, EventArgs e)
         {
             int huonenro = Convert.ToInt32(HuoneNroCB.SelectedValue.ToString());
-                DateTime sisaankirjautuminen = Convert.ToDateTime(SisaanDTP.Value);
-                DateTime uloskirjautuminen = Convert.ToDateTime(UlosDTP.Value);
+            DateTime sisaankirjautuminen = Convert.ToDateTime(SisaanDTP.Value);
+            DateTime uloskirjautuminen = Convert.ToDateTime(UlosDTP.Value);
                 if (varaus.tarkistaPaiva(sisaankirjautuminen, uloskirjautuminen, huonenro))
                 {
                    // MessageBox.Show("Päivät ovat vapaat", "Päivämäärän tarkastus", MessageBoxButtons.OK, MessageBoxIcon.Error);

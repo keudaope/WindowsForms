@@ -1,0 +1,11 @@
+C:\Users\jyrili\Source\Repos\Muistio\Muistio\bin\Debug\Muistio.exe.config
+C:\Users\jyrili\Source\Repos\Muistio\Muistio\bin\Debug\Muistio.exe
+C:\Users\jyrili\Source\Repos\Muistio\Muistio\bin\Debug\Muistio.pdb
+C:\Users\jyrili\Source\Repos\Muistio\Muistio\obj\Debug\Muistio.csprojAssemblyReference.cache
+C:\Users\jyrili\Source\Repos\Muistio\Muistio\obj\Debug\Muistio.Muistio.resources
+C:\Users\jyrili\Source\Repos\Muistio\Muistio\obj\Debug\Muistio.Properties.Resources.resources
+C:\Users\jyrili\Source\Repos\Muistio\Muistio\obj\Debug\Muistio.csproj.GenerateResource.cache
+C:\Users\jyrili\Source\Repos\Muistio\Muistio\obj\Debug\Muistio.csproj.CoreCompileInputs.cache
+C:\Users\jyrili\Source\Repos\Muistio\Muistio\obj\Debug\Muistio.exe
+C:\Users\jyrili\Source\Repos\Muistio\Muistio\obj\Debug\Muistio.pdb
+C:\Users\jyrili\Source\Repos\Muistio\Muistio\obj\Debug\Muistio.tietoa.resources

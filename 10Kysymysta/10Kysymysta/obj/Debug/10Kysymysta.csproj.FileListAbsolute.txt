@@ -1,0 +1,10 @@
+C:\Users\jyrili\Source\Repos\10Kysymysta\10Kysymysta\bin\Debug\10Kysymysta.exe.config
+C:\Users\jyrili\Source\Repos\10Kysymysta\10Kysymysta\bin\Debug\10Kysymysta.exe
+C:\Users\jyrili\Source\Repos\10Kysymysta\10Kysymysta\bin\Debug\10Kysymysta.pdb
+C:\Users\jyrili\Source\Repos\10Kysymysta\10Kysymysta\obj\Debug\10Kysymysta.csprojAssemblyReference.cache
+C:\Users\jyrili\Source\Repos\10Kysymysta\10Kysymysta\obj\Debug\_10Kysymysta.Form1.resources
+C:\Users\jyrili\Source\Repos\10Kysymysta\10Kysymysta\obj\Debug\_10Kysymysta.Properties.Resources.resources
+C:\Users\jyrili\Source\Repos\10Kysymysta\10Kysymysta\obj\Debug\10Kysymysta.csproj.GenerateResource.cache
+C:\Users\jyrili\Source\Repos\10Kysymysta\10Kysymysta\obj\Debug\10Kysymysta.csproj.CoreCompileInputs.cache
+C:\Users\jyrili\Source\Repos\10Kysymysta\10Kysymysta\obj\Debug\10Kysymysta.exe
+C:\Users\jyrili\Source\Repos\10Kysymysta\10Kysymysta\obj\Debug\10Kysymysta.pdb
