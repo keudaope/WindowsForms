@@ -59,11 +59,22 @@ namespace Hotellivarausja
             HuoneenNroTB.Text = HuoneetDG.CurrentRow.Cells[0].Value.ToString();
             HuonetyyppiCB.SelectedValue = HuoneetDG.CurrentRow.Cells[1].Value.ToString();
             PuhelinTB.Text = HuoneetDG.CurrentRow.Cells[2].Value.ToString();
+            string vapaako = HuoneetDG.CurrentRow.Cells[3].Value.ToString();
+            if (vapaako == "False")
+            {
+                EiRB.Checked = true; 
+                KyllaRB.Checked = false;
+            }
+            else
+            {
+                EiRB.Checked = false;
+                KyllaRB.Checked = true;
+            }
         }
 
         private void MuokkaaHuonePainike_Click(object sender, EventArgs e)
         {
-            int tyyppi = Convert.ToInt32(HuonetyyppiCB.SelectedValue.ToString());
+            int tyyppi = Convert.ToInt32(HuonetyyppiCB.SelectedValue);
             String puhelin = PuhelinTB.Text;
             int vapaa = 1;
             try
@@ -116,8 +127,5 @@ namespace Hotellivarausja
             
         }
 
-        private void HuoneenNroTB_TextChanged(object sender, EventArgs e)
-        {
-        }
     }
 }

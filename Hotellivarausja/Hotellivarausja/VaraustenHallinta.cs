@@ -28,7 +28,7 @@ namespace Hotellivarausja
             DateTime uloskirjautuminen = Convert.ToDateTime(UlosDTP.Value);
             //MessageBox.Show(asiakas.ToString() + " " + huone.ToString() + " " + sisaankirjautuminen.ToString() + " " + uloskirjautuminen.ToString());
             
-                if(sisaankirjautuminen < DateTime.Now)
+                if(sisaankirjautuminen <= DateTime.Now)
                 {
                     MessageBox.Show("Sisäänkirjautumisen täytyy olla tämä päivä tai sen jälkeen", "Päivämäärän tarkastus", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }

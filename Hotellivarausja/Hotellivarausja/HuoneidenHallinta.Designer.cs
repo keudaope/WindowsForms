@@ -190,7 +190,6 @@
             this.HuoneenNroTB.Name = "HuoneenNroTB";
             this.HuoneenNroTB.Size = new System.Drawing.Size(190, 29);
             this.HuoneenNroTB.TabIndex = 2;
-            this.HuoneenNroTB.TextChanged += new System.EventHandler(this.HuoneenNroTB_TextChanged);
             // 
             // EtunimiLB
             // 
