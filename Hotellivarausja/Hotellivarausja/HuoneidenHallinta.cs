@@ -36,7 +36,7 @@ namespace Hotellivarausja
             int numero = Convert.ToInt32(HuoneenNroTB.Text);
             int tyyppi = Convert.ToInt32(HuonetyyppiCB.SelectedValue.ToString());
             String puhelin = PuhelinTB.Text;
-            if(huone.lisaaHuone(numero, tyyppi, puhelin, "Kyllä"))
+            if(huone.lisaaHuone(numero, tyyppi, puhelin, 1))
             {
                 MessageBox.Show("Huone lisätty onnistuneesti", "Huoneen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -65,17 +65,17 @@ namespace Hotellivarausja
         {
             int tyyppi = Convert.ToInt32(HuonetyyppiCB.SelectedValue.ToString());
             String puhelin = PuhelinTB.Text;
-            String vapaa = "";
+            int vapaa = 1;
             try
             {
                 int numero = Convert.ToInt32(HuoneenNroTB.Text);
                 if (KyllaRB.Checked)
                 {
-                    vapaa = "Kyllä";
+                    vapaa = 1;
                 }
                 else
                 {
-                    vapaa = "Ei";
+                    vapaa = 0;
                 }
                 if (huone.muokkaaHuonetta(numero, tyyppi, puhelin, vapaa))
                 {

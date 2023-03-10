@@ -48,7 +48,7 @@ namespace Hotellivarausja
         }
 
         // luodaan funktio uuden huoneen lisäämiseksi
-        public bool lisaaHuone(int hnro, int htyyppi, String puh, String vapaa)
+        public bool lisaaHuone(int hnro, int htyyppi, String puh, int vapaa)
         {
             MySqlCommand komento = new MySqlCommand();
             String lisayskysely = "INSERT INTO huoneet " +
@@ -60,7 +60,7 @@ namespace Hotellivarausja
             komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = hnro;
             komento.Parameters.Add("@hty", MySqlDbType.Int32).Value = htyyppi;
             komento.Parameters.Add("@puh", MySqlDbType.VarChar).Value = puh;
-            komento.Parameters.Add("@vap", MySqlDbType.VarChar).Value = vapaa;
+            komento.Parameters.Add("@vap", MySqlDbType.Int32).Value = vapaa;
            
             yhteys.avaaYhteys();
             try
@@ -99,7 +99,7 @@ namespace Hotellivarausja
         }
 
         // luodaan funktio huoneen muokkaamiseksi
-        public bool muokkaaHuonetta(int hnro, int htyyppi, String puh, String vapaa)
+        public bool muokkaaHuonetta(int hnro, int htyyppi, String puh, int vapaa)
         {
             MySqlCommand komento = new MySqlCommand();
             String paivityskysely = "UPDATE `huoneet` SET `Huonetyyppi`= @hty," +
@@ -111,7 +111,7 @@ namespace Hotellivarausja
             komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = hnro;
             komento.Parameters.Add("@hty", MySqlDbType.Int32).Value = htyyppi;
             komento.Parameters.Add("@puh", MySqlDbType.VarChar).Value = puh;
-            komento.Parameters.Add("@vap", MySqlDbType.VarChar).Value = vapaa;
+            komento.Parameters.Add("@vap", MySqlDbType.Int32).Value = vapaa;
 
             yhteys.avaaYhteys();
             if (komento.ExecuteNonQuery() == 1)
